@@ -10,18 +10,24 @@ function same([x, y], [j, k]) {
 
 // The game state to search for `cell` is passed as the `this` value of the function.
 function contains(cell) {
-  //let flatArray = [].concat(...cell).filter(el => (el !== ''));
-    
-  return this.cell;
+  return this.some(c => same(c, cell));
 }
 
 const printCell = (cell, state) => {
-    // return contains.call(this.state)?'\u25A3':'\u25A2';
+    return contains.call(state, cell)?'\u25A3':'\u25A2';
 };
 
-const corners = (state = []) => {};
+const corners = (state = []) => {
+  
+  return {
+      topRight: [resultMax],
+      bottomLeft: [resultMin]
+  };
+};
 
-const printCells = (state) => {};
+const printCells = (state) => {
+ 
+    };
 
 const getNeighborsOf = ([x, y]) => {};
 
@@ -29,7 +35,9 @@ const getLivingNeighbors = (cell, state) => {};
 
 const willBeAlive = (cell, state) => {};
 
-const calculateNext = (state) => {};
+const calculateNext = (state) => {
+  
+};
 
 const iterate = (state, iterations) => {};
 
